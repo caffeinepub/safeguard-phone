@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,800;1,900&family=Barlow:wght@300;400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Boxing Dark Palette — OKLCH */
+    --background: 0.09 0.003 0;
+    --foreground: 0.97 0.002 0;
+    --card: 0.13 0.004 0;
+    --card-foreground: 0.97 0.002 0;
+    --popover: 0.13 0.004 0;
+    --popover-foreground: 0.97 0.002 0;
+
+    /* Crimson red accent */
+    --primary: 0.47 0.22 21;
+    --primary-foreground: 0.97 0.002 0;
+
+    --secondary: 0.17 0.004 0;
+    --secondary-foreground: 0.97 0.002 0;
+
+    --destructive: 0.47 0.22 21;
+    --destructive-foreground: 0.97 0.002 0;
+
+    --muted: 0.16 0.004 0;
+    --muted-foreground: 0.55 0.008 0;
+
+    --accent: 0.47 0.22 21;
+    --accent-foreground: 0.97 0.002 0;
+
+    --border: 0.22 0.005 0;
+    --input: 0.22 0.005 0;
+    --ring: 0.47 0.22 21;
+
+    --chart-1: 0.47 0.22 21;
+    --chart-2: 0.6 0.01 0;
+    --chart-3: 0.4 0.01 0;
+    --chart-4: 0.3 0.01 0;
+    --chart-5: 0.2 0.01 0;
+
+    --sidebar: 0.11 0.003 0;
+    --sidebar-foreground: 0.97 0.002 0;
+    --sidebar-primary: 0.47 0.22 21;
+    --sidebar-primary-foreground: 0.97 0.002 0;
+    --sidebar-accent: 0.16 0.004 0;
+    --sidebar-accent-foreground: 0.97 0.002 0;
+    --sidebar-border: 0.22 0.005 0;
+    --sidebar-ring: 0.47 0.22 21;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .font-headline {
+    font-family: "Oswald", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .font-display {
+    font-family: "Oswald", sans-serif;
+  }
+
+  .hero-bg {
+    background-image: linear-gradient(
+        to bottom,
+        oklch(0.09 0.003 0 / 0.55),
+        oklch(0.09 0.003 0 / 0.92)
+      ), url("/assets/generated/boxing-hero-bg.dim_1920x1080.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .red-glow {
+    box-shadow: 0 0 32px oklch(0.47 0.22 21 / 0.3);
+  }
+
+  .card-hover {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s
+      ease;
+  }
+
+  .card-hover:hover {
+    border-color: oklch(0.47 0.22 21 / 0.6);
+    box-shadow: 0 0 28px oklch(0.47 0.22 21 / 0.15);
+    transform: translateY(-2px);
+  }
+
+  .divider-line {
+    width: 3rem;
+    height: 3px;
+    background-color: oklch(0.47 0.22 21);
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+}
